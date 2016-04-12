@@ -1,0 +1,65 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Defaults
+2.0 Timer
+3.0 Footer
+--------------------------------------------------------------*/
+
+@import 'mixins';
+%primaryfont { font-family: 'Lato', sans-serif; }
+$primary: #efefef;
+$secondary: #333333;
+
+/*--------------------------------------------------------------
+  1.0 Defaults
+--------------------------------------------------------------*/
+html, body {
+  height: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+  @extend %primaryfont;
+  background-color: $primary;
+  color: $secondary;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  line-height: 1.75;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+  @include transition(color .2s ease-in-out);
+  &:hover {
+    color: darken($primary, 30%);
+  }
+}
+
+*:focus {
+  outline: none;
+}
+
+.parent {
+  width: 100%;
+  height: 100%;
+  display: table;
+  text-align: center;
+  > .child {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+/*--------------------------------------------------------------
+  2.0 Board
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+  3.0 Footer
+--------------------------------------------------------------*/
