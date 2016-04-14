@@ -42,15 +42,20 @@
       var random = emptyCells[ Math.floor( Math.random() * emptyCells.length) ];
 
       // Place the computer's mark in the empty cells
-      boardCells[random].innerHTML = turn;
-
       // Add to the computer's score
-      score[turn] += parseInt( boardCells[random].dataset.bit );
+      setTimeout(function(){
+        boardCells[random].innerHTML = turn;
+        boardCells[random].className += ' alt';
 
-      scoreCheck();
+        score[turn] += parseInt( boardCells[random].dataset.bit );
 
-      // Switch back to user's mark
-      turn = 'X';
+        scoreCheck();
+
+        // Switch back to user's mark
+        turn = 'X';
+
+      }, 500);
+
     }
 
     function humanMove(position){
@@ -72,7 +77,7 @@
         $('#notice').text(turn + ' wins!');
       } else if (moves === 9) {
         finished  = true;
-        $('#notice').text('Cat\u2019s game!');
+        $('#notice').text('Tie game!');
       } else {
         return;
       }
@@ -105,6 +110,7 @@
       // Clear the board
       for (var i = 0; i < boardCells.length; i++) {
         boardCells[i].innerHTML = '';
+        boardCells[i].className = 'cell';
       }
 
       // Clear the notice text
