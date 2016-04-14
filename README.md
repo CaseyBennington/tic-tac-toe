@@ -2,7 +2,10 @@
 
 The classic game of [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game. Human vs. Computer.
 
+[Play the game](http://jamigibbs.github.io/tic-tac-toe/)
+
 ![preview](preview.jpg)
+
 
 ### The Logic
 
