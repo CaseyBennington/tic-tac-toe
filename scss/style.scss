@@ -3,7 +3,7 @@
 ----------------------------------------------------------------
 1.0 Defaults
 2.0 Timer
-3.0 Footer
+3.0 Modal
 --------------------------------------------------------------*/
 
 @import 'mixins';
@@ -35,10 +35,10 @@ p {
 
 a {
   text-decoration: none;
-  color: $primary;
+  color: #4FC3F7;
   @include transition(color .2s ease-in-out);
   &:hover {
-    color: darken($primary, 30%);
+    color: darken(#4FC3F7, 20%);
   }
 }
 
@@ -105,5 +105,63 @@ a {
 }
 
 /*--------------------------------------------------------------
-  3.0 Footer
+  3.0 Modal
 --------------------------------------------------------------*/
+a#instructions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5em;
+  font-size: 2em;
+  color: lighten($secondary, 50%);
+  @include transition(color .2s ease-in-out);
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #455A64;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 99999;
+  opacity: 0;
+  @include transition(opacity .2s ease-in-out);
+  pointer-events: none;
+  &:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+  & > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 60px 60px 60px;
+    background: #fff;
+    @include bp-small {
+      width: 250px;
+    }
+  }
+  .close {
+    background: white;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
+    font-weight: 100;
+    padding: 0.4em 0.6em;
+    text-align: center;
+    text-decoration: none;
+    @include transition(all .1s ease-in-out);
+    &:hover {
+      color: $primary;
+    }
+  }
+
+}
