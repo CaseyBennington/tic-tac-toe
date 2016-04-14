@@ -6,21 +6,19 @@ The classic game of [Tic Tac Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) gam
 
 ### The Logic
 
-Each square is assigned a bit value with successive powers of 2:
+Each square is assigned a bit value with successive powers of 2. Totaling solution rows provides a winning value:
 
 ```
 
-  273        84
-  |           |
-
-  1  |  2  |  4   - 7
-  --- ----- ----
-  8  |  16 |  32  - 56
-  --- ----- ----
-  64 | 128 | 256  - 448
-
-  |     |     |
-  73   146   292
+273
+  \       
+     1  |  2  |  4   - 7
+     --- ----- ----
+     8  |  16 |  32  - 56
+     --- ----- ----
+     64 | 128 | 256  - 448
+  /  |     |     |
+84   73   146   292
 
 ```
 
@@ -48,7 +46,7 @@ Winning combinations will include the 3 winning bits:
 
 ```
 
-Using the bitwise operation, we compare the user's total score with the winning combinations to check for 3 matching bits (ie. a winner):
+Using the [bitwise operation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_AND), we compare the user's total score with the winning combinations to check for 3 matching bits (ie. a winner):
 
 Example scenario:
 
