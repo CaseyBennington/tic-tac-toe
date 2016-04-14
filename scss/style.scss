@@ -76,8 +76,11 @@ a {
   width: 500px;
   height: 500px;
   position: relative;
-  font-size: 0;
   color: #66BB6A;
+  @include bp-small {
+    width: 350px;
+    height: 350px;
+  }
 
   .cell {
     float: left;
@@ -88,6 +91,9 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include bp-small {
+      font-size: 75px;
+    }
     &.alt {
       color: #FFF176;
     }

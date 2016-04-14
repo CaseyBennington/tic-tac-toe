@@ -68,8 +68,11 @@ a {
   width: 500px;
   height: 500px;
   position: relative;
-  font-size: 0;
   color: #66BB6A; }
+  @media only screen and (max-width: 40em) {
+    .board {
+      width: 350px;
+      height: 350px; } }
   .board .cell {
     float: left;
     width: 32%;
@@ -79,6 +82,9 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-width: 40em) {
+      .board .cell {
+        font-size: 75px; } }
     .board .cell.alt {
       color: #FFF176; }
     .board .cell:nth-child(1), .board .cell:nth-child(2), .board .cell:nth-child(4), .board .cell:nth-child(5) {
